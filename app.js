@@ -1,28 +1,28 @@
-import { LinkedList } from "./linkedlist.js";
+import { LinkedList } from './linkedlist.js'
 
-class Stack {
+class Queue {
     constructor() {
-        this.list = new LinkedList()
+        this.items = new LinkedList()
     }
 
-
-    push(value) {
-        this.list.prepend(value)
+    enqueue(value) {
+        this.items.append(value)
     }
 
-    pop() {
-        this.list.deleteHeade()
+    dequeue() {
+        return this.items.deleteHeade()
     }
 
     toArray() {
-        return this.list.toArray()
+        return this.items.toArray()
     }
-}
-const stack = new Stack()
 
-stack.push('one')
-stack.push('tow')
-stack.push('three')
-stack.push('fore')
-stack.pop()
-console.log(stack.toArray())
+}
+
+const item = new Queue()
+item.enqueue('amir')
+item.enqueue('mona')
+item.enqueue('hamed')
+
+item.dequeue()
+console.log(item.toArray())
